@@ -22,6 +22,12 @@
         <hibernate-validator.version>5.2.1.Final</hibernate-validator.version>
         <mysql-connector.version>5.1.36</mysql-connector.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
+
+        <wildfly-hostname>localhost</wildfly-hostname>
+        <wildfly-port>9990</wildfly-port>
+        <wildfly-username>apantonov</wildfly-username>
+        <wildfly-password>Qq789-11</wildfly-password>
+        <wildfly-name>core.war</wildfly-name>
     </properties>
 
     <dependencies>
@@ -144,6 +150,18 @@
                         <compilerArgument>-Xlint:all</compilerArgument>
                         <showWarnings>true</showWarnings>
                         <showDeprecation>true</showDeprecation>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.wildfly.plugins</groupId>
+                    <artifactId>wildfly-maven-plugin</artifactId>
+                    <configuration>
+                        <hostname>${wildfly-hostname}</hostname>
+                        <port>${wildfly-port}</port>
+                        <username>${wildfly-username}</username>
+                        <password>${wildfly-password}</password>
+                        <name>${wildfly-name}</name>
                     </configuration>
                 </plugin>
             </plugins>
